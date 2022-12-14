@@ -13,14 +13,14 @@ Spotifyが公開している[Web API](https://developer.spotify.com/documentatio
 本記事では、アーティスト情報や楽曲情報の取得のみを扱い、ユーザーデータへのアクセスは扱いません。
 
 ## 事前準備
-#### アカウントのセットアップ
+### アカウントのセットアップ
 - Spotifyユーザーアカウントの作成
   - アカウントがなければ[こちら](https://open.spotify.com/)より作成します（無料のアカウントで大丈夫です）
 - Spotify for Developersの[ダッシュボード](https://developer.spotify.com/dashboard/)にログイン
   - 作成したSpotifyユーザーアカウントでログインをします
   - 利用規約に同意する必要があります
 
-#### クライアントアプリケーションを作成
+### クライアントアプリケーションを作成
 ※ドキュメントは[こちら](https://developer.spotify.com/documentation/general/guides/authorization/app-settings/)
 
 ダッシュボードにログインし、以下を行います。
