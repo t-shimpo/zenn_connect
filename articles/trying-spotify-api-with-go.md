@@ -3,7 +3,7 @@ title: "GoでSpotify Web APIを叩いてみる "
 emoji: "🎧"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "spotify", ]
-published: false
+published: true
 ---
 Spotifyが公開している[Web API](https://developer.spotify.com/documentation/web-api/)をGoを使って叩いてみました。
 
