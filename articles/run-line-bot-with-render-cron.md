@@ -11,6 +11,8 @@ Renderアカウントの準備、Githubからのデプロイ、Cron Jobsの定�
 LINE Botに限らず、Renderでスケジュール実行を行いたい場合に参考にしていただければと思います。
 
 なお、LINE BotはGoで実装しましたが、Botの実装自体は本記事では扱いません。
+以下の記事でSpotifyの新作リリース情報を送る処理を実装しましたので、今回はそれを毎週特定の時間に実行し、定期的に配信するようにしました。
+https://zenn.dev/shimpo/articles/spotify-new-release-bot
 
 ## Renderの概要
 Renderは様々なWebアプリをデプロイできるPaaSで、Herokuの代替となるようなサービスです。
@@ -34,6 +36,7 @@ https://render.com/docs/cronjobs
 #### 対象
 今回は以下のレポジトリを使用します。
 https://github.com/t-shimpo/spotify-new-release-bot
+[前述した記事](https://zenn.dev/shimpo/articles/spotify-new-release-bot)で作成したものになります。
 
 #### 手順
 
