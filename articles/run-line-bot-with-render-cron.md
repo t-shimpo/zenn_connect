@@ -3,7 +3,7 @@ title: "RenderのCron JobsでLINE Botから定期的にメッセージを配信�
 emoji: "🕒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["linebot", "render", "cron"]
-published: false
+published: true
 ---
 
 [Render](https://render.com/)の**Cron Jobs**を使って、LINE Botから定期的にメッセージを送る設定をしてみました。
