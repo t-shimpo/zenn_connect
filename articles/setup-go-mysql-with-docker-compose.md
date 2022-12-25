@@ -3,7 +3,7 @@ title: "docker-composeでGo + MySQLの環境構築をする"
 emoji: "📦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "mysql", "docker"]
-published: false
+published: true
 ---
 docker-composeでGo + MySQLの環境構築をしてみました。
 
