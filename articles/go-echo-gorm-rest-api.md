@@ -18,7 +18,7 @@ EchoはGoのWebフレームワークです。
 
 https://echo.labstack.com/
 
-### Gorm概要
+### GORM概要
 GORMはGoのORMの1つです。
 Githubのスター数も多く、人気のライブラリです。
 機能が充実していて、マイグレーションも可能です。
