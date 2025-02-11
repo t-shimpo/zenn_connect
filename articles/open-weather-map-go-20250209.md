@@ -92,14 +92,14 @@ OpenWeatherMap では、以下のようなAPIを提供しています。
 ### Current Weather API（現在の天気）
 📌 ドキュメント: https://openweathermap.org/current
 
-#### パラメータ
+##### パラメータ
 - `lat`: Latitude(緯度)
 - `lon`: Longitude(経度)
-#### リクエスト
+##### リクエスト
 ```sh
 curl "https://api.openweathermap.org/data/2.5/weather?lat=35.6895&lon=139.692&appid={API_KEY}"
 ```
-#### レスポンス
+##### レスポンス
 ```json
 {
 	"coord": {
@@ -151,14 +151,14 @@ curl "https://api.openweathermap.org/data/2.5/weather?lat=35.6895&lon=139.692&ap
 ### 5 Day Weather Forecast API（5日間の3時間ごとの予報）
 📌 ドキュメント: https://openweathermap.org/forecast5
 
-#### パラメータ
+##### パラメータ
 - `lat`: Latitude(緯度)
 - `lon`: Longitude(経度)
-#### リクエスト
+##### リクエスト
 ```sh
 curl "https://api.openweathermap.org/data/2.5/forecast?lat=35.6895&lon=139.692&appid={API_KEY}"
 ```
-#### レスポンス
+##### レスポンス
 ```json
 {
 	"cod": "200",
@@ -222,14 +222,14 @@ curl "https://api.openweathermap.org/data/2.5/forecast?lat=35.6895&lon=139.692&a
 ### Geocoding API（都市名から緯度・経度を取得）
 📌 ドキュメント: https://openweathermap.org/api/geocoding-api
 
-#### パラメータ
+##### パラメータ
 - `q`: 都市名や国コード
-#### リクエスト
+##### リクエスト
 ```sh
 curl "https://api.openweathermap.org/geo/1.0/direct?q=Tokyo&limit=2&appid={API_KEY}"
 ```
 
-#### レスポンス
+##### レスポンス
 ```json
 [
 	{
@@ -300,17 +300,17 @@ One Call API 3.0 には、以下のようなエンドポイントがあります
 以下で **Current weather and forecasts**を叩いています。
 
 ### Current weather and forecasts（現在の天気と予報）
-#### パラメータ
+##### パラメータ
 - `lat`: Latitude(緯度)
 - `lon`: Longitude(経度)
 
 `exclude`で除外する項目をしていることも可能です。
 
-#### リクエスト
+##### リクエスト
 ```sh
 curl "https://api.openweathermap.org/data/3.0/onecall?lat=35.6895&lon=139.692&appid={API key}"
 ```
-#### レスポンス
+##### レスポンス
 
 分単位の予報`minutely`、時間単位の予報`hourly`、日単位の予報`daily`の取得も可能です。
 気象警報データもレスポンスされます。
