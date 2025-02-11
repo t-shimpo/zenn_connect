@@ -3,7 +3,7 @@ title: "OpenWeatherMap APIを使う"
 emoji: "🌤"
 type: "tech"
 topics: ["openweather", "api" ]
-published: false
+published: true
 ---
 
 ## はじめに
