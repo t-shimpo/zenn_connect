@@ -9,7 +9,7 @@ published: false
 ## はじめに
 ### 本記事の目的
 - Go言語を用いて、OpenWeatherMap APIを利用したCLIツールを作成します。
-- 指定した都市の「現在の天気」または「5日間の天気予報」を取得できます。
+- 指定した都市の「現在の天気」または「5日間の3時間毎の天気予報」を取得できます。
 
 なお、作成したものは、以下のレポジトリで公開しています。
 https://github.com/t-shimpo/go-open-weather-cli
@@ -25,7 +25,7 @@ https://zenn.dev/shimpo/articles/open-weather-map-go-20250209
 ### コマンド例
 ```sh
 weather current tokyo    # 現在の天気を取得
-weather forecast tokyo   # 5日間の天気予報を取得
+weather forecast tokyo   # 5日間の3時間毎の天気予報を取得
 ```
 
 ### 実装する機能
@@ -104,6 +104,7 @@ Fetching weather forecast for tokyo
 ## 環境変数の管理
 OpenWeatherMap APIのリクエストでAPIキーを使用するので、[godotenv](https://github.com/joho/godotenv?tab=readme-ov-file)を使用し、`.env`ファイルで環境変数を管理します。
 APIキーを取得する関数を追加しました。
+APIキーの取得方法については[こちらの記事](https://github.com/t-shimpo/go-open-weather-cli)をご覧ください。
 
 ```go:config/config.go
 package config
@@ -329,7 +330,7 @@ $ go run main.go weather current tokyo
 風速: 11.32 m/s
 ```
 
-## 5日間の天気予報を取得（5 Day Forecast API）
+## 5日間の3時間毎の天気予報を取得（5 Day Forecast API）
 続いて、取得した緯度・経度の情報から**5 Day Forecast API** で5日間の3時間毎の天気予報を取得する処理を実装します。
 
 📌 APIドキュメント: https://openweathermap.org/forecast5
