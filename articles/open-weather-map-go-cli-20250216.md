@@ -103,9 +103,9 @@ Fetching weather forecast for tokyo
 
 ## 環境変数の管理
 OpenWeatherMap APIのリクエストでAPIキーを使用するので、[godotenv](https://github.com/joho/godotenv?tab=readme-ov-file)を使用し、`.env`ファイルで環境変数を管理します。
-APIキーを取得する関数を追加しました。
 APIキーの取得方法については[こちらの記事](https://github.com/t-shimpo/go-open-weather-cli)をご覧ください。
 
+APIキーを取得する関数を追加しました。
 ```go:config/config.go
 package config
 
