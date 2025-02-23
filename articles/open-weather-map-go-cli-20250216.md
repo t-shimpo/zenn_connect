@@ -3,7 +3,7 @@ title: "GoでOpenWeatherMap APIを利用したCLIツールを作成する"
 emoji: "⛅"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["openweather", "api", "go", "cli"]
-published: false
+published: true
 ---
 
 ## はじめに
