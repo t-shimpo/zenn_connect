@@ -1,6 +1,6 @@
 ---
 title: "docker-compose で Go + PostgreSQL の環境構築をする"
-emoji: "📦"
+emoji: "🐳 "
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "postgresql", "docker"]
 published: false
