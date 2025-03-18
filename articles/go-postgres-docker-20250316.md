@@ -138,15 +138,41 @@ $ docker exec -it postgres psql -U user -d mydb
 ```
 成功すれば`mydb=#` のようなプロンプトが表示されます。 
 
-#### 補足
+### 補足
+#### depends_on
 以下の設定でdbコンテナが起動してからappコンテナを起動するようにしています。
 ```yml
 depends_on:
   - db
 ```
-ただし、PostgreSQL の起動完了を保証するわけではないため、アプリ側でリトライ処理を入れるのが一般的です。
+PostgreSQL の起動完了を保証するわけではないため、アプリ側でリトライ処理の実装や、**healthcheck**を追加しアプリがデータベースの準備完了を待つようにするのが望ましいです。
 
+**healthcheck**の場合は以下のように設定できます。
 
+```diff:docker-compose.yml
+services:
+  app:
+    //
+    depends_on:
++      db:
++        condition: service_healthy
+
+  db:
+    //
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
++    healthcheck:
++      test: ["CMD-SHELL", "pg_isready -U user -d mydb"]
++      interval: 10s
++      retries: 5
++      start_period: 30s
++      timeout: 10s 
+```
+`depends_on: - db`では、単にdbコンテナが起動するのを待つだけですが、`service_healthy` を使うことで、dbが正常に応答できる状態になってからappを起動することができます。
+
+📌 参考URL: https://docs.docker.com/compose/how-tos/startup-order/#example
+
+#### volumes
 以下の設定はデータの永続に関する設定です。
 ```yml
 volumes:
@@ -218,3 +244,5 @@ https://hub.docker.com/_/golang
 https://hub.docker.com/_/postgres
 
 https://docs.docker.jp/compose/toc.html
+
+https://docs.docker.com/compose/how-tos/startup-order/#example
