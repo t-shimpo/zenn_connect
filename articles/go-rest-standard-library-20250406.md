@@ -3,7 +3,7 @@ title: "Go標準ライブラリでREST APIを作る"
 emoji: "🐹"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "restapi", "postgresql", "docker"]
-published: false
+published: true
 ---
 ## はじめに
 Go の 標準ライブラリで REST API を作成しました。
