@@ -38,10 +38,10 @@ https://zenn.dev/shimpo/articles/go-postgres-docker-20250316
 今回はユーザー情報のテーブルとそれを操作するAPIを作成することにしました。
 
 ユーザー情報の項目
-- `id` (int, 主キー, 自動採番)
-- `name` (string, 必須)
-- `email` (string, 必須, 一意)
-- `created_at` (timestamp, デフォルト: 現在時刻)
+- `id` (`int`, 主キー, 自動採番)
+- `name` (`string`, 必須)
+- `email` (`string`, 必須, 一意)
+- `created_at` (`timestamp`, デフォルト: 現在時刻)
 
 ## usersテーブルの作成
 まずは、データベースにusersテーブルを作成します。
@@ -173,7 +173,7 @@ Indexes:
 ```
 
 ## POST /users API
-まず、`POST /users` を実装します。
+まず、ユーザー作成API `POST /users` を実装します。
 
 ### User 構造体とデータ操作
 `models/user.go`にユーザー構造体と、データ操作の関数を作成します。
@@ -215,11 +215,11 @@ func CreateUser(name, email string) (*User, error) {
 ### ハンドラー
 POST リクエストを受け取る HTTP ハンドラー を作ります。
 
-まず、`json.NewDecoder(r.Body).Decode(&req)` でリクエストの JSON を構造体に変換しています。
+まず、`json.NewDecoder(r.Body).Decode(&req)` でリクエストのJSONを構造体に変換しています。
 その後、必須フィールドのバリデーションを行っています。
 今回は、簡易的にnilや空文字でなければOKとしています。
 
-`CreateUser`を実行して成功した場合は、成功レスポンス（`201 Created`）を返しています。
+`CreateUser`を実行して成功した場合は、成功レスポンス `201 Created` を返しています。
 
 ```go:handlers/user_handler.go
 package handlers
@@ -379,7 +379,7 @@ Content-Length: 37
 
 
 ## GET /users/{id} API
-続いて、`GET /users/{id}` を実装します。
+続いて、ユーザー取得API `GET /users/{id}` を実装します。
 
 ### データ操作
 先ほどと同様、`QueryRow().Scan()` を使用して実装しています。
@@ -487,7 +487,7 @@ Content-Length: 54
 
 
 ## GET /users API
-続いて、`GET /users` を実装します。
+続いて、ユーザー一覧取得API `GET /users` を実装します。
 
 ### データ操作
 `limit`と`offset`も受け取れるように実装しました。
@@ -595,8 +595,7 @@ Content-Length: 114
 
 
 ## PATCH /users/{id} API
-続いて、ユーザー情報を変更するAPIを作成します。
-今回は `PATCH /users/{id}` を実装することにしました。
+続いて、ユーザー情報を更新するAPI PATCH /users/{id}` を実装します。
 
 ### データ操作
 `name` `email` はそれぞれ指定されない（nil）の可能性を考慮して`*string`型にしています。
@@ -750,10 +749,10 @@ Content-Length: 67
 
 
 ## DELETE /users/{id} API
-最後に、`DELETE /users/{id}`を実装します。
+最後に、ユーザーを削除するAPI `DELETE /users/{id}` を実装します。
 
 ### データ操作
-`Exec` を使って、実行結果だけが重要なSQL（SELECT 以外） を発行しています。
+`Exec` を使って、実行結果だけが重要なSQLを発行しています。
 `result` は `sql.Result` 型で、何行更新されたか・最後に挿入したIDなどの情報を持ちます。
 
 `result.RowsAffected()`で何行が実際に変更されたかを確認しています。
@@ -784,6 +783,7 @@ func DeleteUser(id int) error {
 DELETE リクエストを受け取る HTTP ハンドラー を作ります。
 
 今回も`sql: no rows in result set`を受け取った場合は`404 Not Found`を返却しています。
+成功時は、`204 No Content`のみを返却しています。
 
 ```go:handlers/user_handler.go
 // `DELETE /users/{id}`
