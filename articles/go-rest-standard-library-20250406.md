@@ -595,7 +595,7 @@ Content-Length: 114
 
 
 ## PATCH /users/{id} API
-続いて、ユーザー情報を更新するAPI PATCH /users/{id}` を実装します。
+続いて、ユーザー情報を更新するAPI `PATCH /users/{id}` を実装します。
 
 ### データ操作
 `name` `email` はそれぞれ指定されない（nil）の可能性を考慮して`*string`型にしています。
@@ -858,6 +858,3 @@ Content-Length: 49
 
 {"error":"ユーザーが見つかりません"}
 ```
-
-## 参考資料
-http://go-database-sql.org/index.html
