@@ -582,7 +582,7 @@ Content-Length: 469
 
 [{"id":1,"name":"山田太郎","email":"test@example.com","created_at":"2025-03-30T23:08:59.364493Z"},{"id":2,"name":"青木ただよし","email":"test_aoki@example.com","created_at":"2025-03-30T23:10:58.343966Z"}]
 ```
-異常系
+limit, offsetを指定
 ```
 $ curl -X GET -i "http://localhost:8080/users?limit=1&offset=1"
 HTTP/1.1 200 OK
