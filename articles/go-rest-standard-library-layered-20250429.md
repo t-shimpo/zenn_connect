@@ -3,7 +3,7 @@ title: "Go標準パッケージだけで作るREST APIをレイヤー分離す�
 emoji: "📁"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "restapi", "postgresql", "docker"]
-published: false
+published: true
 ---
 ## はじめに
 以前の記事でGo標準ライブラリでREST APIを作りました。
