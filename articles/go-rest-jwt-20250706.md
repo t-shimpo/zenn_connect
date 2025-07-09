@@ -3,7 +3,7 @@ title: "Go REST API に JWT認証 を組み込む"
 emoji: "🔐"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["go", "restapi", "jwt"]
-published: false
+published: true
 ---
 ## はじめに
 Go のアプリケーションにJWT認証機能を作成しました。
@@ -54,9 +54,9 @@ JWT認証の概要を説明します。
 
 ### JWT(JSON Web Token)
 JWTは
-- 誰がこのトークンを発行したか:issuer
-- どのユーザーのものか:subject
-- 有効期限:expiration
+- 誰がこのトークンを発行したか：issuer
+- どのユーザーのものか：subject
+- 有効期限：expiration
 
 をJSON形式で表し、それを秘密鍵で署名したトークンです。
 このトークンを使って認証を行います。
